@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name" translatable="false">MatchYassenMichael</string>
     <string name="Title">Image Match Game</string>
+    <string name="reset">Reset</string>
+    <string name="zero">Zero</string>
+    <string name="scores">Scores</string>
+    <string name="about">About</string>
+    <string name="card_description">Card in the game</string>
+    <string name="games_played">Games Played:</string>
 </resources>
