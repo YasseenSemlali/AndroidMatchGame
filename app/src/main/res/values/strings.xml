@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">MatchYassenMichael</string>
+    <string name="app_name" translatable="false">MatchYassenMichael</string>
     <string name="Title">Image Match Game</string>
 </resources>

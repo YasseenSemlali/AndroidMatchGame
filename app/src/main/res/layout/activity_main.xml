@@ -20,8 +20,9 @@
 
     <ImageButton
         android:id="@+id/imageButton1"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="16dp"
         android:contentDescription="1st Card in the game"
         android:scaleType="centerInside"
         app:layout_constraintEnd_toStartOf="@+id/imageButton2"
@@ -31,8 +32,9 @@
 
     <ImageButton
         android:id="@+id/imageButton2"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="16dp"
         android:contentDescription="2nd Card in the game"
         android:scaleType="centerInside"
         app:layout_constraintEnd_toEndOf="parent"
@@ -42,8 +44,9 @@
 
     <ImageButton
         android:id="@+id/imageButton3"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="16dp"
         android:contentDescription="2nd Card in the game"
         android:scaleType="centerInside"
         app:layout_constraintEnd_toStartOf="@+id/imageButton4"
@@ -53,8 +56,9 @@
 
     <ImageButton
         android:id="@+id/imageButton4"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="16dp"
         android:contentDescription="2nd Card in the game"
         android:scaleType="centerInside"
         app:layout_constraintEnd_toEndOf="parent"
@@ -64,8 +68,9 @@
 
     <ImageButton
         android:id="@+id/imageButton5"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="16dp"
         android:contentDescription="2nd Card in the game"
         android:scaleType="centerInside"
         app:layout_constraintEnd_toStartOf="@+id/imageButton6"
@@ -75,8 +80,9 @@
 
     <ImageButton
         android:id="@+id/imageButton6"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="16dp"
         android:contentDescription="2nd Card in the game"
         android:scaleType="centerInside"
         app:layout_constraintEnd_toEndOf="parent"
@@ -85,47 +91,47 @@
         app:srcCompat="@drawable/AH" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/resetBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Button"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button2"
+        app:layout_constraintEnd_toStartOf="@+id/zeroBtn"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/zeroBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Button"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button3"
-        app:layout_constraintStart_toEndOf="@+id/button" />
+        app:layout_constraintEnd_toStartOf="@+id/scoresBtn"
+        app:layout_constraintStart_toEndOf="@+id/resetBtn" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/scoresBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Button"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button4"
-        app:layout_constraintStart_toEndOf="@+id/button2" />
+        app:layout_constraintEnd_toStartOf="@+id/aboutBtn"
+        app:layout_constraintStart_toEndOf="@+id/zeroBtn" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/aboutBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button3" />
+        app:layout_constraintStart_toEndOf="@+id/scoresBtn" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/resetBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageButton5" />
