@@ -14,6 +14,7 @@ import android.widget.Button
  * @version 2019
  *
  * TODO: add logging
+ * TODO: add shared preferences game counter
  */
 class MainActivity : AppCompatActivity() {
     protected var gameCounter = 0
