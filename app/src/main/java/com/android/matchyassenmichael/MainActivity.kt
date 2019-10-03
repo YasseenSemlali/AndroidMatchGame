@@ -12,6 +12,8 @@ import android.widget.Button
  *
  * @author Michael Mishin
  * @version 2019
+ *
+ * TODO: add logging
  */
 class MainActivity : AppCompatActivity() {
     protected var gameCounter = 0
@@ -33,5 +35,19 @@ class MainActivity : AppCompatActivity() {
             val launchScoresActivity = Intent(applicationContext,ScoresActivity::class.java)
             startActivity(launchScoresActivity)
         }
-    }
-}
+
+        // set an event listener to reset and reshuffle the game
+        val resetButton = findViewById<Button>(R.id.resetBtn)
+        resetButton.setOnClickListener {
+            //TODO: reset and reshuffling of the game goes here.
+        }
+
+        // set an event listener to clear all the counters of the game
+        val zeroButton = findViewById<Button>(R.id.zeroBtn)
+        zeroButton.setOnClickListener {
+            //TODO: clear of the counters.
+        }
+
+    }// END OF: onCreate()
+
+}// END OF: class MainActivity
