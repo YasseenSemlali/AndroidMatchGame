@@ -30,7 +30,7 @@
         app:layout_constraintEnd_toStartOf="@+id/cardBtn2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/gameTitleTxt"
-        app:srcCompat="@drawable/AH" />
+        app:srcCompat="@drawable/card_ah" />
 
     <ImageButton
         android:id="@+id/cardBtn2"
@@ -43,7 +43,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/cardBtn1"
         app:layout_constraintTop_toBottomOf="@+id/gameTitleTxt"
-        app:srcCompat="@drawable/AH" />
+        app:srcCompat="@drawable/card_ah" />
 
     <ImageButton
         android:id="@+id/cardBtn3"
@@ -56,7 +56,7 @@
         app:layout_constraintEnd_toStartOf="@+id/cardBtn4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardBtn1"
-        app:srcCompat="@drawable/AH" />
+        app:srcCompat="@drawable/card_ah" />
 
     <ImageButton
         android:id="@+id/cardBtn4"
@@ -69,7 +69,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/cardBtn3"
         app:layout_constraintTop_toBottomOf="@+id/cardBtn2"
-        app:srcCompat="@drawable/AH" />
+        app:srcCompat="@drawable/card_ah" />
 
     <ImageButton
         android:id="@+id/cardBtn5"
@@ -82,7 +82,7 @@
         app:layout_constraintEnd_toStartOf="@+id/cardBtn6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardBtn3"
-        app:srcCompat="@drawable/AH" />
+        app:srcCompat="@drawable/card_ah" />
 
     <ImageButton
         android:id="@+id/cardBtn6"
@@ -95,7 +95,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/cardBtn5"
         app:layout_constraintTop_toBottomOf="@+id/cardBtn4"
-        app:srcCompat="@drawable/AH" />
+        app:srcCompat="@drawable/card_ah" />
 
     <Button
         android:id="@+id/resetBtn"
