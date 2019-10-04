@@ -54,6 +54,9 @@ class MainActivity : AppCompatActivity() {
         val scoresButton = findViewById<Button>(R.id.scoresBtn)
         scoresButton.setOnClickListener {
             val launchScoresActivity = Intent(applicationContext,ScoresActivity::class.java)
+            launchScoresActivity.putExtra("hit", this.hitCounter)
+            launchScoresActivity.putExtra("miss", this.missCounter)
+            launchScoresActivity.putExtra("games", this.gameCounter)
             startActivity(launchScoresActivity)
         }
 
@@ -76,7 +79,7 @@ class MainActivity : AppCompatActivity() {
     private fun beginRound() {
         this.enableButtons()
         this.numTries = 0;
-        val currentSet = ImageSet.SET_1
+        val currentSet = ImageSet.getRandomSet()
 
         for(i in 0 until currentSet.getSize()) {
             this.buttons[i].setImageResource(currentSet[i].id)
@@ -86,6 +89,7 @@ class MainActivity : AppCompatActivity() {
                     Log.d("d","Correct")
                     this.buttons[i].setImageResource(currentSet.highlightImage)
                     this.hitCounter++
+                    this.gameCounter++;
                     this.disableButtons()
                 }
             } else {
@@ -94,6 +98,7 @@ class MainActivity : AppCompatActivity() {
                     this.numTries++
                     this.missCounter++
                     if(this.numTries >= 2) {
+                        this.gameCounter++;
                         this.disableButtons()
                         this.buttons[currentSet.getOutlierIndex()].setImageResource(currentSet.highlightImage)
                     }

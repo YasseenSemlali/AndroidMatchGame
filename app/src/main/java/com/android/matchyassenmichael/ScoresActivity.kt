@@ -1,5 +1,6 @@
 package com.android.matchyassenmichael
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
@@ -27,10 +28,14 @@ class ScoresActivity : AppCompatActivity() {
         val hitCounterTxt = findViewById<TextView>(R.id.hitCounterTxt)
         val missCounterTxt = findViewById<TextView>(R.id.missCounterTxt)
 
-        // appending the values to the text references
-        gameCounterTxt.text = R.string.games_played.toString() + "$gameCounter"
-        hitCounterTxt.text = R.string.hit_counter.toString() + "$hitCounter"
-        missCounterTxt.text = R.string.miss_counter.toString() + "$missCounter"
+        val extras: Bundle? = intent.extras
+
+        if(extras != null) {
+            // appending the values to the text references
+            gameCounterTxt.text = getString(R.string.games_played) + extras.getInt("games")
+            hitCounterTxt.text = getString(R.string.hit_counter) + extras.getInt("hit")
+            missCounterTxt.text = getString(R.string.miss_counter) + extras.getInt("miss")
+        }
 
     }
 }
