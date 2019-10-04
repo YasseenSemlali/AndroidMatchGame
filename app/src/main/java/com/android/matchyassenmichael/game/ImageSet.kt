@@ -1,10 +1,29 @@
-package com.android.imagematch.game
+package com.android.matchyassenmichael.game
 
+import com.android.matchyassenmichael.R
 import kotlin.random.Random
 
-class ImageSet constructor(var images: Array<Image>){
+class ImageSet(val outlierImage:Int, val highlightImage: Int, vararg otherImages:Int){
+
+    var images = ArrayList<MatchImage>()
+
+    companion object {
+        val SET_1 =  ImageSet( R.drawable.card_10c, R.drawable.card_10d,
+            R.drawable.aces,
+            R.drawable.aces,
+            R.drawable.aces,
+            R.drawable.aces,
+            R.drawable.aces
+        );
+    }
 
     init{
+        images.add(MatchImage(outlierImage, true))
+
+        otherImages.forEach {
+            images.add(MatchImage(it, false))
+        }
+
         this.shuffle()
     }
 
@@ -19,11 +38,22 @@ class ImageSet constructor(var images: Array<Image>){
         }
     }
 
-    public fun get(index: Int) : Image {
-        return this.images.get(index)
+    operator fun get(index: Int) : MatchImage {
+        return this.images[index]
     }
 
-    public fun isMistmatch(index: Int) : Boolean {
-        return this.images.get(index).isMismatch
+    fun isOutlier(index: Int) : Boolean {
+        return this.images[index].isMismatch
+    }
+
+    fun getSize(): Int {
+        return this.images.size;
+    }
+
+    fun getOutlierIndex(): Int {
+        for(i in 0 until this.images.size) {
+            if(this.isOutlier(i)) return i;
+        }
+        return -1;
     }
 }
