@@ -7,12 +7,145 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/gameTitleTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="8dp"
+        android:text="@string/Title"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/cardBtn1"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="16dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/image_description_card"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toStartOf="@+id/cardBtn2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gameTitleTxt"
+        app:srcCompat="@drawable/card_ah" />
+
+    <ImageButton
+        android:id="@+id/cardBtn2"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="16dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/image_description_card"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cardBtn1"
+        app:layout_constraintTop_toBottomOf="@+id/gameTitleTxt"
+        app:srcCompat="@drawable/card_ah" />
+
+    <ImageButton
+        android:id="@+id/cardBtn3"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="8dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/image_description_card"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toStartOf="@+id/cardBtn4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardBtn1"
+        app:srcCompat="@drawable/card_ah" />
+
+    <ImageButton
+        android:id="@+id/cardBtn4"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="8dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/image_description_card"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cardBtn3"
+        app:layout_constraintTop_toBottomOf="@+id/cardBtn2"
+        app:srcCompat="@drawable/card_ah" />
+
+    <ImageButton
+        android:id="@+id/cardBtn5"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="8dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/image_description_card"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toStartOf="@+id/cardBtn6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardBtn3"
+        app:srcCompat="@drawable/card_ah" />
+
+    <ImageButton
+        android:id="@+id/cardBtn6"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="8dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/image_description_card"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cardBtn5"
+        app:layout_constraintTop_toBottomOf="@+id/cardBtn4"
+        app:srcCompat="@drawable/card_ah" />
+
+    <Button
+        android:id="@+id/resetBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="@string/reset"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/zeroBtn"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/zeroBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="@string/zero"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/scoresBtn"
+        app:layout_constraintStart_toEndOf="@+id/resetBtn" />
+
+    <Button
+        android:id="@+id/scoresBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="@string/scores"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/aboutBtn"
+        app:layout_constraintStart_toEndOf="@+id/zeroBtn" />
+
+    <Button
+        android:id="@+id/aboutBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="@string/about"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/scoresBtn" />
+
+    <TextView
+        android:id="@+id/gamesPlayedCounterTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/games_played"
+        app:layout_constraintBottom_toTopOf="@+id/resetBtn"
+        app:layout_constraintStart_toStartOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

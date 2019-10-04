@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MatchYassenMichael</string>
+    <string name="reset">Reset</string>
+    <string name="zero">Zero</string>
+    <string name="Title">Image Match Game</string>
+    <string name="scores">Scores</string>
+    <string name="about">About</string>
+    <string name="image_description_card">Card in the game</string>
+    <string name="games_played">Games Played:</string>
+    <string name="credits"><![CDATA[This application was written by Yasseen Semlali & Michael Mishin]]></string>
+    <string name="image_description_creator">This is an image for the creator of the application</string>
+    <string name="hit_counter">Hit Counter:</string>
+    <string name="miss_counter">Miss Counter:</string>
+</resources>
