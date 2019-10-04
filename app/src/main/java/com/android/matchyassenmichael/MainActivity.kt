@@ -75,7 +75,21 @@ class MainActivity : AppCompatActivity() {
             //TODO: clear of the counters.
         }
 
-        this.beginRound()
+        Log.d("D", "test " + savedInstanceState?.getInt("hit"))
+        if(savedInstanceState?.getInt("games") == null) {
+            this.beginRound()
+        } else {
+            this.currentSet =  savedInstanceState.getSerializable("set") as ImageSet
+
+            this.hitCounter =  savedInstanceState.getInt("hit")
+            this.missCounter =  savedInstanceState.getInt("miss")
+            this.gameCounter =  savedInstanceState.getInt("games")
+            this.numTries =  savedInstanceState.getInt("tries")
+
+
+            this.enableButtons()
+            this.loadSet()
+        }
     }// END OF: onCreate()
 
     private fun beginRound() {
@@ -86,13 +100,17 @@ class MainActivity : AppCompatActivity() {
         this.loadSet()
     }
 
-    override fun onSaveInstanceState(outState: Bundle, outPersistentState: PersistableBundle) {
-        super.onSaveInstanceState(outState, outPersistentState)
-
+    override fun onSaveInstanceState(outState: Bundle) {
         outState.putInt("hit", this.hitCounter)
         outState.putInt("miss", this.missCounter)
         outState.putInt("games", this.gameCounter)
+
+        outState.putInt("tries", this.numTries)
+
+
         outState.putSerializable("set", this.currentSet)
+
+        super.onSaveInstanceState(outState)
     }
 
     private fun loadSet() {
@@ -100,12 +118,17 @@ class MainActivity : AppCompatActivity() {
             this.buttons[i].setImageResource(currentSet[i].id)
 
             if(currentSet.isOutlier(i)) {
+
                 this.buttons[i].setOnClickListener {
                     Log.d("d","Correct")
                     this.buttons[i].setImageResource(currentSet.highlightImage)
                     this.hitCounter++
                     this.gameCounter++;
                     this.disableButtons()
+                }
+
+                if(this.numTries >= 2) {
+                    this.buttons[i].setImageResource(currentSet.highlightImage)
                 }
             } else {
                 this.buttons[i].setOnClickListener {
@@ -119,6 +142,10 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
             }
+        }
+
+        if(this.numTries >= 2) {
+            this.disableButtons()
         }
     }
 
