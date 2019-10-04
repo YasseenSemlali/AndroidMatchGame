@@ -3,6 +3,7 @@ package com.android.matchyassenmichael
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.util.Log
 import android.widget.Button
 import android.widget.ImageButton
@@ -20,6 +21,7 @@ import com.android.matchyassenmichael.game.ImageSet
  */
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var currentSet: ImageSet
     private var gameCounter = 0
     private var numTries = 0;
 
@@ -78,9 +80,22 @@ class MainActivity : AppCompatActivity() {
 
     private fun beginRound() {
         this.enableButtons()
-        this.numTries = 0;
-        val currentSet = ImageSet.getRandomSet()
+        this.numTries = 0
+        this.currentSet = ImageSet.getRandomSet()
 
+        this.loadSet()
+    }
+
+    override fun onSaveInstanceState(outState: Bundle, outPersistentState: PersistableBundle) {
+        super.onSaveInstanceState(outState, outPersistentState)
+
+        outState.putInt("hit", this.hitCounter)
+        outState.putInt("miss", this.missCounter)
+        outState.putInt("games", this.gameCounter)
+        outState.putSerializable("set", this.currentSet)
+    }
+
+    private fun loadSet() {
         for(i in 0 until currentSet.getSize()) {
             this.buttons[i].setImageResource(currentSet[i].id)
 

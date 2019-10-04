@@ -2,9 +2,10 @@ package com.android.matchyassenmichael.game
 
 import android.media.Image
 import com.android.matchyassenmichael.R
+import java.io.Serializable
 import kotlin.random.Random
 
-class ImageSet(val outlierImage:Int, val highlightImage: Int, vararg otherImages:Int){
+class ImageSet  (val outlierImage:Int, val highlightImage: Int, vararg otherImages:Int) : Serializable{
 
     private var images = ArrayList<MatchImage>()
 
