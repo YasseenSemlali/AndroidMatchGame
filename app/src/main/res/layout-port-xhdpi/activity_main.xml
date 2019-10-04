@@ -21,8 +21,8 @@
 
     <ImageButton
         android:id="@+id/cardBtn1"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
+        android:layout_width="165dp"
+        android:layout_height="165dp"
         android:layout_marginTop="8dp"
         android:adjustViewBounds="true"
         android:contentDescription="@string/image_description_card"
@@ -34,8 +34,8 @@
 
     <ImageButton
         android:id="@+id/cardBtn2"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
+        android:layout_width="165dp"
+        android:layout_height="165dp"
         android:layout_marginTop="8dp"
         android:adjustViewBounds="true"
         android:contentDescription="@string/image_description_card"
@@ -46,8 +46,8 @@
 
     <ImageButton
         android:id="@+id/cardBtn3"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
+        android:layout_width="165dp"
+        android:layout_height="165dp"
         android:layout_marginTop="4dp"
         android:adjustViewBounds="true"
         android:contentDescription="@string/image_description_card"
@@ -58,8 +58,8 @@
 
     <ImageButton
         android:id="@+id/cardBtn4"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
+        android:layout_width="165dp"
+        android:layout_height="165dp"
         android:layout_marginTop="4dp"
         android:adjustViewBounds="true"
         android:contentDescription="@string/image_description_card"
@@ -70,8 +70,8 @@
 
     <ImageButton
         android:id="@+id/cardBtn5"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
+        android:layout_width="165dp"
+        android:layout_height="165dp"
         android:layout_marginTop="4dp"
         android:adjustViewBounds="true"
         android:contentDescription="@string/image_description_card"
@@ -82,8 +82,8 @@
 
     <ImageButton
         android:id="@+id/cardBtn6"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
+        android:layout_width="165dp"
+        android:layout_height="165dp"
         android:layout_marginTop="4dp"
         android:adjustViewBounds="true"
         android:contentDescription="@string/image_description_card"

@@ -10,7 +10,7 @@
         android:id="@+id/gameTitleTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="8dp"
         android:text="@string/Title"
         android:textAlignment="center"
         android:textSize="30sp"
@@ -21,9 +21,9 @@
 
     <ImageButton
         android:id="@+id/cardBtn1"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="16dp"
         android:adjustViewBounds="true"
         android:contentDescription="@string/image_description_card"
         android:scaleType="fitCenter"
@@ -34,9 +34,9 @@
 
     <ImageButton
         android:id="@+id/cardBtn2"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="16dp"
         android:adjustViewBounds="true"
         android:contentDescription="@string/image_description_card"
         android:scaleType="fitCenter"
@@ -46,9 +46,9 @@
 
     <ImageButton
         android:id="@+id/cardBtn3"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:layout_marginTop="4dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="8dp"
         android:adjustViewBounds="true"
         android:contentDescription="@string/image_description_card"
         android:scaleType="fitCenter"
@@ -58,9 +58,9 @@
 
     <ImageButton
         android:id="@+id/cardBtn4"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:layout_marginTop="4dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="8dp"
         android:adjustViewBounds="true"
         android:contentDescription="@string/image_description_card"
         android:scaleType="fitCenter"
@@ -70,9 +70,9 @@
 
     <ImageButton
         android:id="@+id/cardBtn5"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:layout_marginTop="4dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="8dp"
         android:adjustViewBounds="true"
         android:contentDescription="@string/image_description_card"
         android:scaleType="fitCenter"
@@ -82,9 +82,9 @@
 
     <ImageButton
         android:id="@+id/cardBtn6"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:layout_marginTop="4dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="8dp"
         android:adjustViewBounds="true"
         android:contentDescription="@string/image_description_card"
         android:scaleType="fitCenter"
@@ -96,9 +96,8 @@
         android:id="@+id/resetBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="16dp"
         android:text="@string/reset"
-        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/zeroBtn"
         app:layout_constraintStart_toStartOf="parent" />
@@ -107,9 +106,8 @@
         android:id="@+id/zeroBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="16dp"
         android:text="@string/zero"
-        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/scoresBtn"
         app:layout_constraintStart_toEndOf="@+id/resetBtn" />
@@ -118,9 +116,8 @@
         android:id="@+id/scoresBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="16dp"
         android:text="@string/scores"
-        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/aboutBtn"
         app:layout_constraintStart_toEndOf="@+id/zeroBtn" />
@@ -129,9 +126,8 @@
         android:id="@+id/aboutBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="16dp"
         android:text="@string/about"
-        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/scoresBtn" />
@@ -140,8 +136,8 @@
         android:id="@+id/gamesPlayedCounterTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginBottom="4dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="8dp"
         android:text="@string/games_played"
         app:layout_constraintBottom_toTopOf="@+id/resetBtn"
         app:layout_constraintStart_toStartOf="parent" />
