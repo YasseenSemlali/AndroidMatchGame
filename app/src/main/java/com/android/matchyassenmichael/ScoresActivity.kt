@@ -32,9 +32,9 @@ class ScoresActivity : AppCompatActivity() {
 
         if(extras != null) {
             // appending the values to the text references
-            gameCounterTxt.text = getString(R.string.games_played) + extras.getInt("games")
-            hitCounterTxt.text = getString(R.string.hit_counter) + extras.getInt("hit")
-            missCounterTxt.text = getString(R.string.miss_counter) + extras.getInt("miss")
+            gameCounterTxt.text = getString(R.string.games_played) + " " + extras.getInt("games")
+            hitCounterTxt.text = getString(R.string.hit_counter) + " " + extras.getInt("hit")
+            missCounterTxt.text = getString(R.string.miss_counter) + " " + extras.getInt("miss")
         }
 
     }
