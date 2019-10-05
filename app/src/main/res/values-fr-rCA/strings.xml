@@ -1,4 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">MatchYassenMichael</string>
+    <string name="image_description_card">Carte dans le jeu</string>
+    <string name="reset">Réinitialiser</string>
+    <string name="zero">Zéro</string>
+    <string name="Title">Jeu de correspondance d\'images</string>
+    <string name="credits"><![CDATA[Cette application a été écrite par Yasseen Semlali & Michael Mishin]]></string>
+    <string name="image_description_creator">C\'est la photo du créateur</string>
+    <string name="about">À propos</string>
+    <string name="game_description">Le but du jeu est de sélectionner l\'image que ne conforme pas au thème présenter. Le joueur a deux essaies avant que le jeu montre la réponse.</string>
+    <string name="hit_counter">Jeux accomplis:</string>
+    <string name="games_played">Jeux complétés:</string>
+    <string name="miss_counter">Jeux ratés:</string>
+    <string name="scores">Résultats</string>
 </resources>

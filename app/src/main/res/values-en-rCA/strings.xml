@@ -12,4 +12,5 @@
     <string name="image_description_creator">This is an image for the creator of the application</string>
     <string name="hit_counter">Hit Counter:</string>
     <string name="miss_counter">Miss Counter:</string>
+    <string name="game_description">The goal of this game is to select the image out of the 6 images that doen\'t match the theme. The player has two tries before the game reveals the correct choise.</string>
 </resources>
