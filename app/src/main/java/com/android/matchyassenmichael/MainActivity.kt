@@ -25,8 +25,6 @@ import android.icu.lang.UCharacter.GraphemeClusterBreak.T
  * @author Michael Mishin
  * @version 2019
  *
- * TODO: add logging
- * TODO: add shared preferences game counter
  */
 class MainActivity : AppCompatActivity() {
 
@@ -113,6 +111,9 @@ class MainActivity : AppCompatActivity() {
         }
     }// END OF: onCreate()
 
+    /**
+     * Starts a round
+     */
     private fun beginRound() {
         this.enableButtons()
         this.resetTries()
@@ -134,6 +135,9 @@ class MainActivity : AppCompatActivity() {
         super.onSaveInstanceState(outState)
     }
 
+    /**
+     * Loads the images onto the GUI based on the current ImageSet
+     */
     private fun loadSet() {
         for(i in 0 until currentSet.getSize()) {
             this.buttons[i].setImageResource(currentSet[i].id)
