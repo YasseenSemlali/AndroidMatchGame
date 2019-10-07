@@ -3,11 +3,20 @@ package com.android.matchyassenmichael
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.util.Log
 import android.widget.Button
 import android.widget.ImageButton
+import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import com.android.matchyassenmichael.game.ImageSet
+import android.content.DialogInterface
+import androidx.core.app.ComponentActivity
+import androidx.core.app.ComponentActivity.ExtraData
+import androidx.core.content.ContextCompat.getSystemService
+import android.icu.lang.UCharacter.GraphemeClusterBreak.T
+
+
 
 /**
  * Assignment 1: Match Game Assignment
@@ -30,6 +39,10 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var buttons: Array<ImageButton>;
 
+    private lateinit var gamesTxt: TextView
+    private lateinit var test: TextView
+    private lateinit var attemptsTxt: TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -43,7 +56,6 @@ class MainActivity : AppCompatActivity() {
             findViewById<ImageButton>(R.id.cardBtn5),
             findViewById<ImageButton>(R.id.cardBtn6)
         )
-
 
         // set an event listener to create the About Activity
         val aboutButton = findViewById<Button>(R.id.aboutBtn)
@@ -66,16 +78,25 @@ class MainActivity : AppCompatActivity() {
         val resetButton = findViewById<Button>(R.id.resetBtn)
         resetButton.setOnClickListener {
             this.beginRound()
-            //TODO: reset and reshuffling of the game goes here.
         }
 
         // set an event listener to clear all the counters of the game
         val zeroButton = findViewById<Button>(R.id.zeroBtn)
         zeroButton.setOnClickListener {
-            //TODO: clear of the counters.
+            this.resetGames()
+            this.resetTries()
+            this.beginRound()
+            this.hitCounter = 0
+            this.missCounter = 0
         }
 
-        Log.d("D", "test " + savedInstanceState?.getInt("hit"))
+
+        this.gamesTxt = findViewById<TextView>(R.id.gamesPlayedCounterTxt)
+        this.attemptsTxt = findViewById<TextView>(R.id.attemptsCounterTxt)
+
+        this.gamesTxt.text = getText(R.string.games_played).toString() + this.gameCounter.toString()
+        this.attemptsTxt.text = getText(R.string.tries_remaining).toString() + 2
+
         if(savedInstanceState?.getInt("games") == null) {
             this.beginRound()
         } else {
@@ -94,7 +115,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun beginRound() {
         this.enableButtons()
-        this.numTries = 0
+        this.resetTries()
         this.currentSet = ImageSet.getRandomSet()
 
         this.loadSet()
@@ -122,8 +143,16 @@ class MainActivity : AppCompatActivity() {
                 this.buttons[i].setOnClickListener {
                     Log.d("d","Correct")
                     this.buttons[i].setImageResource(currentSet.highlightImage)
-                    this.hitCounter++
-                    this.gameCounter++;
+
+                    val alertDialog = AlertDialog.Builder(this@MainActivity).create()
+                    alertDialog.setMessage(getString(R.string.you_win))
+                    alertDialog.setButton(
+                        AlertDialog.BUTTON_NEUTRAL, "OK"
+                    ) { dialog, which -> dialog.dismiss() }
+                    alertDialog.show()
+
+                    this.incrementHits()
+                    this.incrementGames()
                     this.disableButtons()
                 }
 
@@ -133,12 +162,21 @@ class MainActivity : AppCompatActivity() {
             } else {
                 this.buttons[i].setOnClickListener {
                     Log.d("d","Wrong")
-                    this.numTries++
-                    this.missCounter++
+
+                    Toast.makeText(applicationContext, getString(R.string.wrong_choice), Toast.LENGTH_SHORT).show()
+
+                    this.incrementMisses()
+                    this.incrementTries()
                     if(this.numTries >= 2) {
-                        this.gameCounter++;
+                        val alertDialog = AlertDialog.Builder(this@MainActivity).create()
+                        alertDialog.setMessage(getString(R.string.game_ended))
+                        alertDialog.setButton(
+                            AlertDialog.BUTTON_NEUTRAL, "OK"
+                        ) { dialog, which -> dialog.dismiss() }
+                        alertDialog.show()
+
+                        this.incrementGames()
                         this.disableButtons()
-                        this.buttons[currentSet.getOutlierIndex()].setImageResource(currentSet.highlightImage)
                     }
                 }
             }
@@ -160,4 +198,33 @@ class MainActivity : AppCompatActivity() {
             it.isClickable = true
         }
     }
+
+    private fun incrementHits() {
+        this.hitCounter++
+    }
+
+    private fun incrementMisses() {
+        this.missCounter++
+    }
+
+    private fun incrementGames() {
+        this.gameCounter++
+        this.gamesTxt.text = getText(R.string.games_played).toString() + this.gameCounter.toString()
+    }
+
+    private fun resetGames() {
+        this.gameCounter = 0;
+        this.gamesTxt.text = getText(R.string.games_played).toString() + this.gameCounter.toString()
+    }
+
+    private fun incrementTries() {
+        this.numTries++
+        this.attemptsTxt.text = getText(R.string.tries_remaining).toString() + (2-this.numTries).toString()
+    }
+
+    private fun resetTries() {
+        this.numTries = 0
+        this.attemptsTxt.text = getText(R.string.tries_remaining).toString() + (2-this.numTries).toString()
+    }
+
 }// END OF: class MainActivity

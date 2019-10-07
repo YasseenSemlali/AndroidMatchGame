@@ -13,4 +13,8 @@
     <string name="games_played">Jeux complétés:</string>
     <string name="miss_counter">Jeux ratés:</string>
     <string name="scores">Résultats</string>
+    <string name="tries_remaining">Essais restants:</string>
+    <string name="wrong_choice">Mauvais choix</string>
+    <string name="game_ended">Jeux fini, Clickez sur Reset pour rejouer.</string>
+    <string name="you_win">Vous gagnez! Clickez sur Reset pour rejouer.</string>
 </resources>
