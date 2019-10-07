@@ -12,4 +12,5 @@
     <string name="image_description_creator">This is an image for the creator of the application</string>
     <string name="hit_counter">Hit Counter:</string>
     <string name="miss_counter">Miss Counter:</string>
+    <string name="failed_attempts">Failed attempts:</string>
 </resources>

@@ -7,6 +7,7 @@ import android.os.PersistableBundle
 import android.util.Log
 import android.widget.Button
 import android.widget.ImageButton
+import android.widget.TextView
 import com.android.matchyassenmichael.game.ImageSet
 
 /**
@@ -30,6 +31,9 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var buttons: Array<ImageButton>;
 
+    private lateinit var attemptsTxt: TextView
+    private lateinit var gamesTxt: TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -43,7 +47,6 @@ class MainActivity : AppCompatActivity() {
             findViewById<ImageButton>(R.id.cardBtn5),
             findViewById<ImageButton>(R.id.cardBtn6)
         )
-
 
         // set an event listener to create the About Activity
         val aboutButton = findViewById<Button>(R.id.aboutBtn)
@@ -66,7 +69,6 @@ class MainActivity : AppCompatActivity() {
         val resetButton = findViewById<Button>(R.id.resetBtn)
         resetButton.setOnClickListener {
             this.beginRound()
-            //TODO: reset and reshuffling of the game goes here.
         }
 
         // set an event listener to clear all the counters of the game
@@ -75,6 +77,9 @@ class MainActivity : AppCompatActivity() {
             //TODO: clear of the counters.
         }
 
+
+        this.attemptsTxt = findViewById(R.id.attemptsCounterTxt);
+        this.gamesTxt = findViewById<TextView>(R.id.gamesPlayedCounterTxt);
         Log.d("D", "test " + savedInstanceState?.getInt("hit"))
         if(savedInstanceState?.getInt("games") == null) {
             this.beginRound()
@@ -94,7 +99,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun beginRound() {
         this.enableButtons()
-        this.numTries = 0
+        this.resetTries()
         this.currentSet = ImageSet.getRandomSet()
 
         this.loadSet()
@@ -122,8 +127,8 @@ class MainActivity : AppCompatActivity() {
                 this.buttons[i].setOnClickListener {
                     Log.d("d","Correct")
                     this.buttons[i].setImageResource(currentSet.highlightImage)
-                    this.hitCounter++
-                    this.gameCounter++;
+                    this.incrementHits()
+                    this.incrementGames()
                     this.disableButtons()
                 }
 
@@ -133,10 +138,10 @@ class MainActivity : AppCompatActivity() {
             } else {
                 this.buttons[i].setOnClickListener {
                     Log.d("d","Wrong")
-                    this.numTries++
-                    this.missCounter++
+                    this.incrementMisses()
+                    this.incrementTries()
                     if(this.numTries >= 2) {
-                        this.gameCounter++;
+                        this.incrementGames()
                         this.disableButtons()
                         this.buttons[currentSet.getOutlierIndex()].setImageResource(currentSet.highlightImage)
                     }
@@ -160,4 +165,28 @@ class MainActivity : AppCompatActivity() {
             it.isClickable = true
         }
     }
+
+    private fun incrementHits() {
+        this.hitCounter++
+    }
+
+    private fun incrementMisses() {
+        this.missCounter++
+    }
+
+    private fun incrementGames() {
+        this.gameCounter++
+        this.gamesTxt.text = getText(R.string.games_played).toString() + this.gameCounter.toString()
+    }
+
+    private fun incrementTries() {
+        this.numTries++
+        this.attemptsTxt.text = getText(R.string.failed_attempts).toString() + this.numTries.toString()
+    }
+
+    private fun resetTries() {
+        this.numTries = 0
+        this.attemptsTxt.text = getText(R.string.failed_attempts).toString() + this.numTries.toString()
+    }
+
 }// END OF: class MainActivity
