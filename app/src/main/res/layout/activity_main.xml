@@ -150,9 +150,9 @@
         android:id="@+id/attemptsCounterTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
+        android:layout_marginStart="8dp"
         android:layout_marginBottom="36dp"
-        android:text="@string/failed_attempts"
+        android:text="@string/tries_remaining"
         app:layout_constraintBottom_toTopOf="@+id/resetBtn"
         app:layout_constraintStart_toStartOf="parent" />
 

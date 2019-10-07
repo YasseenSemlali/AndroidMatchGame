@@ -1,3 +1,4 @@
+
 <resources>
     <string name="app_name" translatable="false">MatchYassenMichael</string>
     <string name="Title">Image Match Game</string>
@@ -7,10 +8,13 @@
     <string name="about">About</string>
     <string name="image_description_card">Card in the game</string>
     <string name="games_played">Games Played:</string>
-    <string name="game_description">TODO: This is the description of the game</string>
     <string name="credits"><![CDATA[This application was written by Yasseen Semlali & Michael Mishin]]></string>
     <string name="image_description_creator">This is an image for the creator of the application</string>
     <string name="hit_counter">Hit Counter:</string>
     <string name="miss_counter">Miss Counter:</string>
-    <string name="failed_attempts">Failed attempts:</string>
+    <string name="tries_remaining">Tries remaining:</string>
+    <string name="game_description">The goal of this game is to select the image out of the 6 images that doen\'t match the theme. The player has two tries before the game reveals the correct choise.</string>
+    <string name="wrong_choice">Wrong choice</string>
+    <string name="game_ended">Game ended, Click on Reset to play again.</string>
+    <string name="you_win">You win! Click on Reset to play again.</string>
 </resources>
