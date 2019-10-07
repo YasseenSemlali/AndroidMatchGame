@@ -43,23 +43,11 @@
 
     <ImageView
         android:id="@+id/imageOfYasseen"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="595dp"
+        android:layout_height="280dp"
         android:layout_marginTop="16dp"
         android:contentDescription="@string/image_description_creator"
-        app:layout_constraintEnd_toStartOf="@+id/imageOfMichael"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/creatorsDescriptionTxt"
-        tools:srcCompat="@tools:sample/avatars[0]" />
-
-    <ImageView
-        android:id="@+id/imageOfMichael"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:contentDescription="@string/image_description_creator"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageOfYasseen"
-        app:layout_constraintTop_toBottomOf="@+id/creatorsDescriptionTxt"
-        tools:srcCompat="@tools:sample/avatars[5]" />
+        tools:srcCompat="@drawable/us" />
 </androidx.constraintlayout.widget.ConstraintLayout>

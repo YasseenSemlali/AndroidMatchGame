@@ -165,6 +165,7 @@ class MainActivity : AppCompatActivity() {
 
                     Toast.makeText(applicationContext, getString(R.string.wrong_choice), Toast.LENGTH_SHORT).show()
 
+                    it.isClickable = false
                     this.incrementMisses()
                     this.incrementTries()
                     if(this.numTries >= 2) {
