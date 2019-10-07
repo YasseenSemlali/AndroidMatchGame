@@ -5,7 +5,9 @@ import com.android.matchyassenmichael.R
 import java.io.Serializable
 import kotlin.random.Random
 
-
+/** Stores a set of images for the matching game
+ *
+ */
 class ImageSet  (val outlierImage:Int, val highlightImage: Int, vararg otherImages:Int) : Serializable{
 
     private var images = ArrayList<MatchImage>()
@@ -46,6 +48,9 @@ class ImageSet  (val outlierImage:Int, val highlightImage: Int, vararg otherImag
         this.shuffle()
     }
 
+    /**
+     * Swaps 2 random images 1000 times
+     */
     private fun shuffle() {
         for(i in 0..1000) {
             var first = Random.nextInt(0, images.size);
@@ -67,12 +72,5 @@ class ImageSet  (val outlierImage:Int, val highlightImage: Int, vararg otherImag
 
     fun getSize(): Int {
         return this.images.size;
-    }
-
-    fun getOutlierIndex(): Int {
-        for(i in 0 until this.images.size) {
-            if(this.isOutlier(i)) return i;
-        }
-        return -1;
     }
 }
